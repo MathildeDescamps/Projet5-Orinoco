@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a113c07fb8.js" crossorigin="anonymous"></script>
+    <title>Page produit</title>
+</head>
+
+<body>
+    <div class="container-fluid bg-light">
+        <header class="row">
+            <div class="col-8">
+                <h1 class="display-5 font-weight-bold">Orinoco</h1>
+            </div>
+            <div class="col-4">
+                <a href="./order.html" class="link-unstyled"><i id="cart-icon" class="fas fa-shopping-cart fa-2x text-warning"></i>
+                <span class="rounded-circle bg-dark text-light" id="nbItems"></span></a>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-md-3">
+                <button onclick="window.location.href='./index.html';" type="button" id="backToHomepageButton" class="btn btn-warning">Retour à l'accueil</button>
+            </div>
+        </div><br/>
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="jumbotron bg-dark text-light text-center pt-4 pb-4">Fiche produit</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-responsive-sm table-bordered">
+                    <thead class="thead-light">
+                        <tr>
+                            <th class="headersOfTable">Photo</th>
+                            <th class="rightPartOfTable headersOfTable">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img id="photo" src="./" alt="[photo camera]" /></td>
+                            <td id="table-text" class="rightPartOfTable">Modèle :
+                                <p class="font-weight-bold" id="model"></p> Prix :
+                                <p id="price"></p>
+                                <label for="dropDownList">Choisissez un objectif :</label>
+                                <select name="lenses" id="dropDownList"></select><br/> <button type="button" id="addToCartButton" class="btn btn-dark link-unstyled">Ajouter au panier</button>
+                                <button onclick="window.location.href='./order.html';" type="button" id="order" class="btn btn-success">Valider le panier</button>
+                                <button type="button" id="cleanCartButton" class="btn btn-danger">Vider le panier</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><br/>
+        <br/><br/>
+        <footer class="footer">
+            <div class="row">
+                <div class="col">
+                    <a href="mailto:contact@orinoco.fr" class="text-dark">Nous contacter</a>
+                </div>
+                <div class="col">
+                    <p><i id="copyright-icon" class="far fa-copyright"></i> orinoco - 2020</p>
+                </div>
+                <div class="col">
+                    <p class="text-dark">Mentions légales</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Scripts nécéssaires au fonctionnement de Bootstrap + scripts js -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="js/Cart.js"></script>
+        <script src="js/PreviewCamera.js"></script>
+    </div>
+</body>
+
+</html>

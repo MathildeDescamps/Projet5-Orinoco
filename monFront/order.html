@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/a113c07fb8.js" crossorigin="anonymous"></script>
+    <title>Commande</title>
+</head>
+
+<body>
+    <div class="container-fluid bg-light">
+        <header class="row">
+            <div class="col-8">
+                <h1 class="display-5 font-weight-bold">Orinoco</h1>
+            </div>
+            <div class="col-4">
+                <a href="./order.html" class="link-unstyled"><i id="cart-icon" class="fas fa-shopping-cart fa-2x text-warning"></i>
+                <span class="rounded-circle bg-dark text-light" id="nbItems">€</span></a>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-md-3">
+                <button onclick="window.location.href='./index.html';" type="button" id="backToHomepageButton" class="btn btn-warning">Retour à l'accueil</button>
+            </div>
+        </div><br/>
+        <div>
+        </div>
+        <section id="cartRecap">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="jumbotron bg-dark text-light text-center pt-4 pb-4">Votre panier</h2>
+                </div>
+            </div>
+            <table class="table" id="recap">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Modèle</th>
+                        <th>Prix (en €)</th>
+                    </tr>
+                </thead>
+                <tbody id="items">
+                    <!-- Elements ajoutés dynamiquerement avec le js-->
+                </tbody>
+                <tfoot>
+                    <tr id="totalPrice" class="bg-warning">
+                        <th>Prix total</th>
+                        <!--Prix total de la commande ajouté en js-->
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+        <section id="formContainer" class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <br/>
+                    <h2 class="bg-dark text-light jumbotron text-center pt-4 pb-4">Formulaire de commande</h2>
+                </div>
+            </div>
+            <form id="orderForm" class="mb-5">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Prénom" id="firstname" required>
+                    <p id="firstnameError" style="color: red;"></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nom" id="lastname" required>
+                    <p id="lastnameError" style="color: red;"></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Adresse" id="address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ville" id="city" required>
+                    <p id="cityError" style="color: red;"></p>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Adresse électronique" id="emailAddress" required>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" id="submitButton" value="Commander">
+                </div>
+            </form><br/>
+        </section>
+        <footer class="footer">
+            <div class="row">
+                <div class="col">
+                    <a href="mailto:contact@orinoco.fr" class="text-dark">Nous contacter</a>
+                </div>
+                <div class="col">
+                    <p><i id="copyright-icon" class="far fa-copyright"></i> orinoco - 2020</p>
+                </div>
+                <div class="col">
+                    <p class="text-dark">Mentions légales</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Scripts nécéssaires au fonctionnement de Bootstrap + scripts js -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="./js/Order.js"></script>
+    </div>
+</body>
+
+</html>
