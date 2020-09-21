@@ -1,3 +1,5 @@
+/* style général */
+
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #261624;
@@ -88,24 +90,7 @@ footer {
 }
 
 
-/* Pour écrans sm */
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 22px;
-    }
-    #addToCartButton,
-    #order,
-    #cleanCartButton {
-        margin-bottom: 10px;
-    }
-    #photo {
-        width: 250px;
-    }
-}
-
-
-/* Pour écrans xs */
+/* style pour des très petit écrans */
 
 @media (max-width: 576px) {
     .jumbotron {
@@ -122,4 +107,61 @@ footer {
     }
 }
 
-@media (max-width: 768px) {}
+
+/* style pour des petits écrans */
+
+@media (max-width: 784px) {
+    h1.header {
+        font-size: 22px;
+    }
+    #cart-icon {
+        top: 0px;
+    }
+    #nbItems {
+        bottom: 20px;
+    }
+    #backToHomepageButton {
+        font-size: 12px;
+        margin-bottom: 0px;
+    }
+    h2.jumbotron {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+    .card {
+        width: 200px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #cards {
+        justify-content: space-around;
+    }
+    #addToCartButton,
+    #order,
+    #cleanCartButton {
+        margin-bottom: 10px;
+    }
+    #photo {
+        width: 100px;
+    }
+    .headersOfTable {
+        font-size: 12px;
+    }
+    #table-text {
+        font-size: 10px;
+        padding-bottom: 5px;
+    }
+    #model {
+        font-size: 12px;
+    }
+    #table-text .btn {
+        font-size: 8px;
+        width: 90px;
+    }
+    #cleanCartButton {
+        margin-left: 0px;
+    }
+    #dropDownList {
+        margin-bottom: 15px;
+    }
+}

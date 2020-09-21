@@ -5,25 +5,17 @@ var address = document.getElementById("address");
 var city = document.getElementById("city");
 var emailAddress = document.getElementById("emailAddress");
 var submitButton = document.getElementById("submitButton");
+
+// Expression Régulière pour la validation des champs "prenom", "nom" et "ville" du formulaire de commande.
 let MyRegex = /^[a-zA-Z-\s]+$/;
+
 var products = JSON.parse(localStorage.getItem('products'));
 if (products == null) {
     products = [];
 };
 let recap = document.getElementById("recap");
-// Definition objet Contact
-class Contact {
-    constructor(firstName, lastName, address, city, email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.email = email;
-    }
-};
 
-
-//Recap panier
+// Recapitulatif du panier.
 function showCardContent(item) {
     let items = document.getElementById("items");
     let newItem = document.createElement("tr");
@@ -34,22 +26,34 @@ function showCardContent(item) {
     let newPrice = document.createElement("td");
     newItem.appendChild(newPrice);
     newPrice.innerHTML = item.price;
-}
+};
 for (let i in products) {
     showCardContent(products[i]);
 };
-//Calcul du prix total de la commande
+
+// Calcul du prix total de la commande.
 let totalPrice = 0;
 for (let i in products) {
     totalPrice = totalPrice + products[i].price;
-}
-//i = 0; i <= products.length; i++
+};
+
 let totalPriceLine = document.getElementById("totalPrice");
 let totalPriceCell = document.createElement("th");
 totalPriceLine.appendChild(totalPriceCell);
 totalPriceCell.innerHTML = totalPrice;
 
-//Validation du formulaire de commande
+// Création de la classe Contact.
+class Contact {
+    constructor(firstName, lastName, address, city, email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.email = email;
+    }
+};
+
+// Validation du formulaire de commande.
 function formValidation(e) {
     e.preventDefault();
     if (MyRegex.test(firstname.value) == false) {
@@ -71,16 +75,16 @@ function formValidation(e) {
         document.getElementById("cityError").innerHTML = " ";
     };
 
-    // Creer objet contact avec donnees du formulaire validées
+    // Création de l'objet "contact" avec les données du formulaire validées.
     let contact = new Contact(firstname.value, lastname.value, address.value, city.value, emailAddress.value);
 
-    // Creer un tableau ids contenant les ids des produits du panier
+    // Création du tableau "ids" contenant les ids des produits du panier.
     let ids = [];
     for (let i in products) {
         ids.push(products[i]._id);
     };
 
-    // Créer object order qui contient les objets contact et products
+    // Création de l'object "order" qui contient les objets "contact" et "products".
     let order = { "contact": contact, "products": ids };
     let request = new XMLHttpRequest();
     var orderPromise = new Promise(function(resolve, reject) {

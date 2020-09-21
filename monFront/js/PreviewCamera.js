@@ -1,6 +1,8 @@
+// On utilise les paramètres de l'URL pour cibler la requête.
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id')
 const apiURL = "http://localhost:3000/api/cameras/";
+
 var camera;
 var products = JSON.parse(localStorage.getItem('products'));
 if (products == null) {
@@ -8,6 +10,8 @@ if (products == null) {
 }
 nbItems = document.getElementById("nbItems");
 nbItems.innerText = products.length;
+
+// Nouvelle requête HTTP pour récupérer et afficher les infos de la caméra sur laquelle l'utilisateur a cliqué.
 let request = new XMLHttpRequest();
 var camerasPreviewPromise = new Promise(function(resolve, reject) {
     request.onreadystatechange = function() {
@@ -41,6 +45,8 @@ camerasPreviewPromise.then(function(data) {
     .catch(function() {
         alert('Erreur au niveau de la requête.');
     });
+
+// Activation des boutons "ajouter au panier" et "vider le panier".
 let addToCartButton = document.getElementById("addToCartButton");
 addToCartButton.addEventListener('click', addToCart);
 let cleanCartButton = document.getElementById("cleanCartButton");

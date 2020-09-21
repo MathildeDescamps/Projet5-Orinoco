@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Site Orinoco, vente de caméras vintages : fiche produit.">
+    <meta name="keywords" content="Orinoco, e-commerce, cameras, cameras vintages, vintage, fiche produit">
+    <meta name="author" content="Mathilde Descamps">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -10,11 +13,12 @@
     <title>Page produit</title>
 </head>
 
-<body>
-    <div class="container-fluid bg-light">
+<body class="bg-light">
+    <!-- conteneur Bootstrap : largeur 100% -->
+    <div class="container-fluid">
         <header class="row">
             <div class="col-8">
-                <h1 class="display-5 font-weight-bold">Orinoco</h1>
+                <h1 class=" header display-5 font-weight-bold">Orinoco</h1>
             </div>
             <div class="col-4">
                 <a href="./order.html" class="link-unstyled"><i id="cart-icon" class="fas fa-shopping-cart fa-2x text-warning"></i>
@@ -28,12 +32,13 @@
         </div><br/>
         <div class="row">
             <div class="col-md-12">
-                <h2 class="jumbotron bg-dark text-light text-center pt-4 pb-4">Fiche produit</h2>
+                <h2 class="jumbotron bg-dark text-light text-center pt-3 pb-3 mt-0 mb-3 pt-md-4 pb-md-4 mb-md-4">Fiche produit</h2>
             </div>
         </div>
+        <!-- fiche produit de la caméra -->
         <div class="row">
             <div class="col-md-12">
-                <table class="table table-responsive-sm table-bordered">
+                <table class="table table-bordered">
                     <thead class="thead-light">
                         <tr>
                             <th class="headersOfTable">Photo</th>
@@ -57,6 +62,7 @@
             </div>
         </div><br/>
         <br/><br/>
+        <!-- fin de la fiche produit -->
         <footer class="footer">
             <div class="row">
                 <div class="col">
@@ -77,6 +83,7 @@
         <script src="js/Cart.js"></script>
         <script src="js/PreviewCamera.js"></script>
     </div>
+    <!-- fin du conteneur Bootstrap -->
 </body>
 
 </html>

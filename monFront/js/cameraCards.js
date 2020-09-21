@@ -1,15 +1,15 @@
 let row = document.getElementById("cards");
 var items;
 
+// Fonction qui permet de créer des cards Bootstrap comme liste des caméras.
 function createCard(item) {
     let cardRow = document.getElementById("cards");
     let cardContainer = document.createElement("div");
     cardRow.appendChild(cardContainer);
-    cardContainer.classList.add("col-sm", "col-xs-12", "d-flex", "justify-content-center");
+    cardContainer.classList.add("col-sm", "col-xs-12", "d-flex");
     let card = document.createElement("div");
     cardContainer.appendChild(card);
-    card.classList.add("card", "border-warning", "mb-3", "w-auto");
-    card.setAttribute("style", "width: 12rem;");
+    card.classList.add("card", "border-warning", "mb-3");
     let cardImage = document.createElement("img");
     card.appendChild(cardImage);
     cardImage.classList.add("card-img-top");
@@ -31,6 +31,8 @@ function createCard(item) {
     cardDescription.classList.add("card-text");
     cardDescription.innerHTML = item.description;
 }
+
+// Nouvelle requête HTTP avec une promise pour récupérer les infos sur les caméras.
 var request = new XMLHttpRequest();
 var camerasPromise = new Promise(function(resolve, reject) {
     request.onreadystatechange = function() {

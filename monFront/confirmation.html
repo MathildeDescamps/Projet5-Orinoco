@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Site Orinoco, vente de caméras vintages : page de confirmation de commande.">
+    <meta name="keywords" content="Orinoco, e-commerce, cameras, cameras vintages, vintage, commande, confirmation, numero de commande">
+    <meta name="author" content="Mathilde Descamps">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -10,7 +13,8 @@
     <title>Page de confirmation</title>
 </head>
 
-<body>
+<body class="bg-light">
+    <!-- conteneur Bootstrap : largeur 100% -->
     <div class="container-fluid">
         <header class="row">
             <div class="col-8">
@@ -25,12 +29,14 @@
             <button onclick="window.location.href='./index.html';" type="button" id="backToHomepageButton" class="btn btn-warning">Retour à l'accueil</button>
         </div>
         <br/>
+        <!-- message de remerciement ( avec id de la commande + prix total ) -->
         <section class="row">
             <div class="alert alert-success pt-md-4 pb-md-4 ml-auto mr-auto mt-md-5 mb-5  col-md-11 col-10" role="alert">
                 <h3>Merci <span id="firstName"></span> ! Votre numéro de commande est :<b><span id="orderId"></span></b>.</h3>
                 <h4>Prix total : <b><span id="totalPrice"></span></b></h4>
             </div>
         </section>
+        <!-- fin du message -->
         <br/>
         <footer class="footer">
             <div class="row">
@@ -51,6 +57,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script src="./js/Confirmation.js"></script>
     </div>
+    <!-- fin du conteneur Bootstrap -->
 </body>
 
 </html>

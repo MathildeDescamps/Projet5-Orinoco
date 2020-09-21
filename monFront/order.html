@@ -3,15 +3,19 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Site Orinoco, vente de caméras vintages : formulaire de commande.">
+    <meta name="keywords" content="Orinoco, e-commerce, cameras, cameras vintages, vintage, formulaire, commande, contact">
+    <meta name="author" content="Mathilde Descamps">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/a113c07fb8.js" crossorigin="anonymous"></script>
-    <title>Commande</title>
+    <title>Page de commande</title>
 </head>
 
-<body>
-    <div class="container-fluid bg-light">
+<body class="bg-light">
+    <!-- conteneur Bootstrap : largeur 100% -->
+    <div class="container-fluid">
         <header class="row">
             <div class="col-8">
                 <h1 class="display-5 font-weight-bold">Orinoco</h1>
@@ -28,6 +32,7 @@
         </div><br/>
         <div>
         </div>
+        <!-- tableau de récapitulatif du panier -->
         <section id="cartRecap">
             <div class="row">
                 <div class="col-12">
@@ -42,16 +47,18 @@
                     </tr>
                 </thead>
                 <tbody id="items">
-                    <!-- Elements ajoutés dynamiquerement avec le js-->
+                    <!-- éléments ajoutés dynamiquerement avec le js-->
                 </tbody>
                 <tfoot>
                     <tr id="totalPrice" class="bg-warning">
                         <th>Prix total</th>
-                        <!--Prix total de la commande ajouté en js-->
+                        <!-- prix total de la commande ajouté en js -->
                     </tr>
                 </tfoot>
             </table>
         </section>
+        <!-- fin du recap -->
+        <!-- formulaire de commande -->
         <section id="formContainer" class="mb-5">
             <div class="row">
                 <div class="col-12">
@@ -83,6 +90,7 @@
                 </div>
             </form><br/>
         </section>
+        <!-- fin du formulaire -->
         <footer class="footer">
             <div class="row">
                 <div class="col">
@@ -102,6 +110,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
         <script src="./js/Order.js"></script>
     </div>
+    <!-- fin du conteneur Bootstrap -->
 </body>
 
 </html>
