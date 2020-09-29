@@ -1,34 +1,28 @@
 let row = document.getElementById("cards");
 var items;
 
-// Fonction qui permet de créer des cards Bootstrap comme liste des caméras.
+// Fonction permettant de créer des "cartes" pour présenter la liste des caméras.
 function createCard(item) {
-    let cardRow = document.getElementById("cards");
-    let cardContainer = document.createElement("div");
-    cardRow.appendChild(cardContainer);
-    cardContainer.classList.add("col-sm", "col-xs-12", "d-flex");
+    let cardsContainer = document.getElementById("cards-container");
     let card = document.createElement("div");
-    cardContainer.appendChild(card);
-    card.classList.add("card", "border-warning", "mb-3");
+    cardsContainer.appendChild(card);
+    card.classList.add("card-body");
+    let cardTitleLink = document.createElement("a");
+    card.appendChild(cardTitleLink);
+    cardTitleLink.setAttribute("href", 'detail.html?id=' + item._id + '');
+    cardTitleLink.classList.add("card-title-link", "link-unstyled");
     let cardImage = document.createElement("img");
-    card.appendChild(cardImage);
-    cardImage.classList.add("card-img-top");
+    cardTitleLink.appendChild(cardImage);
+    cardImage.classList.add("card-img");
     cardImage.setAttribute("src", item.imageUrl);
     cardImage.setAttribute("alt", "[Photo de la caméra]");
-    let cardBody = document.createElement("div");
-    card.appendChild(cardBody);
-    cardBody.classList.add("card-body");
-    let cardTitleLink = document.createElement("a");
-    cardBody.appendChild(cardTitleLink);
-    cardTitleLink.setAttribute("href", 'detail.html?id=' + item._id + '');
-    cardTitleLink.classList.add("stretched-link", "text-decoration-none");
     let cardTitle = document.createElement("h5");
     cardTitleLink.appendChild(cardTitle);
-    cardTitle.classList.add("card-title", "text-warning");
+    cardTitle.classList.add("card-title");
     cardTitle.innerHTML = item.name;
     let cardDescription = document.createElement("p");
-    cardBody.appendChild(cardDescription);
-    cardDescription.classList.add("card-text");
+    cardTitleLink.appendChild(cardDescription);
+    cardDescription.classList.add("card-description");
     cardDescription.innerHTML = item.description;
 }
 

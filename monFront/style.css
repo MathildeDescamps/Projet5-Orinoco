@@ -1,4 +1,4 @@
-/* style général */
+/* STYLE POUR GRANDS ET TRES GRANDS ECRANS */
 
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -28,9 +28,39 @@ h2 {
     padding-bottom: 10px;
 }
 
-#cards {
-    margin-top: 30px;
-    padding-bottom: 20px;
+#cards-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-body {
+    width: 10%;
+    height: 75%;
+    margin: 15px 15px 100px 15px;
+    background-color: #f0eded;
+    border-radius: 20px;
+}
+
+.card-body:hover {
+    transform: scale(1.1);
+}
+
+.card-body img {
+    width: 100%;
+}
+
+.card-body h5 {
+    padding: 10px 10px 0px 10px;
+    color: #F4C10A;
+}
+
+.card-body h5:hover {
+    color: #cda207;
+}
+
+.card-body p {
+    padding: 0px 10px 10px 10px;
 }
 
 #photo {
@@ -90,27 +120,28 @@ footer {
 }
 
 
-/* style pour des très petit écrans */
+/* STYLE POUR MOYENS ECRANS */
 
-@media (max-width: 576px) {
-    .jumbotron {
-        font-size: 20px;
+@media (max-width: 1110px) {
+    #cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 10px;
+        margin-right: 10px;
     }
-    #cards {
-        margin-top: 5px;
-    }
-    .alert {
-        font-size: 10px;
-    }
-    footer {
-        font-size: 10px;
+    .card-body {
+        width: 45%;
+        max-width: 45%;
+        height: 30%;
+        margin: 15px 15px 15px 15px;
     }
 }
 
 
-/* style pour des petits écrans */
+/* STYLE POUR PETITS ECRANS */
 
-@media (max-width: 784px) {
+@media (max-width: 620px) {
     h1.header {
         font-size: 22px;
     }
@@ -128,13 +159,13 @@ footer {
         font-size: 18px;
         margin-top: 5px;
     }
-    .card {
-        width: 200px;
-        margin-left: 10px;
-        margin-right: 10px;
+    #cards-container {
+        justify-content: center;
     }
-    #cards {
-        justify-content: space-around;
+    .card-body {
+        width: 80%;
+        max-width: 80%;
+        height: 18%;
     }
     #addToCartButton,
     #order,
@@ -163,5 +194,23 @@ footer {
     }
     #dropDownList {
         margin-bottom: 15px;
+    }
+}
+
+
+/* STYLE POUR TRES PETITS ECRANS */
+
+@media (max-width: 576px) {
+    .jumbotron {
+        font-size: 20px;
+    }
+    #cards {
+        margin-top: 5px;
+    }
+    .alert {
+        font-size: 10px;
+    }
+    footer {
+        font-size: 10px;
     }
 }

@@ -16,7 +16,13 @@ if (products == null) {
 let recap = document.getElementById("recap");
 
 // Recapitulatif du panier.
+
+// Ajout de la virgule dans les prix pour qu'ils soient en €.
+
 function showCardContent(item) {
+    let priceVal = item.price;
+    let priceString = item.price.toString();
+    priceString = priceString.substring(0, priceString.length - 2) + '.' + priceString.substring(priceString.length - 2);
     let items = document.getElementById("items");
     let newItem = document.createElement("tr");
     items.appendChild(newItem);
@@ -25,7 +31,7 @@ function showCardContent(item) {
     newProduct.innerHTML = item.name;
     let newPrice = document.createElement("td");
     newItem.appendChild(newPrice);
-    newPrice.innerHTML = item.price;
+    newPrice.innerHTML = priceString;
 };
 for (let i in products) {
     showCardContent(products[i]);
@@ -40,7 +46,9 @@ for (let i in products) {
 let totalPriceLine = document.getElementById("totalPrice");
 let totalPriceCell = document.createElement("th");
 totalPriceLine.appendChild(totalPriceCell);
-totalPriceCell.innerHTML = totalPrice;
+let totalPriceString = totalPrice.toString();
+totalPriceString = totalPriceString.substring(0, totalPriceString.length - 2) + '.' + totalPriceString.substring(totalPriceString.length - 2);
+totalPriceCell.innerHTML = totalPriceString;
 
 // Création de la classe Contact.
 class Contact {

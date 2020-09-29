@@ -12,7 +12,9 @@ for (let i in products) {
     totalPrice = totalPrice + products[i].price;
 }
 if (totalPrice == 0) {
-    totalPriceSpan.innerText = "0 €.";
+    totalPriceSpan.innerText = "0,00 €.";
 } else {
-    totalPriceSpan.innerText = totalPrice + " €";
+    let totalPriceString = totalPrice.toString();
+    totalPriceString = totalPriceString.substring(0, totalPriceString.length - 2) + '.' + totalPriceString.substring(totalPriceString.length - 2);
+    totalPriceSpan.innerText = totalPriceString + " €";
 }

@@ -33,7 +33,10 @@ camerasPreviewPromise.then(function(data) {
         let cameraModel = document.getElementById("model");
         cameraModel.innerText = camera.name;
         let cameraPrice = document.getElementById("price");
-        cameraPrice.innerText = camera.price.toString() + " €";
+        let priceVal = camera.price;
+        let priceString = camera.price.toString();
+        priceString = priceString.substring(0, priceString.length - 2) + '.' + priceString.substring(priceString.length - 2);
+        cameraPrice.innerText = priceString + " €";
         for (let i in camera.lenses) {
             let dropDownList = document.getElementById("dropDownList");
             let lenseOption = document.createElement("option");
