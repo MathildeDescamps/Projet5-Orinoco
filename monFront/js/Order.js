@@ -7,7 +7,8 @@ var emailAddress = document.getElementById("emailAddress");
 var submitButton = document.getElementById("submitButton");
 
 // Expression Régulière pour la validation des champs "prenom", "nom" et "ville" du formulaire de commande.
-let MyRegex = /^[a-zA-Z-\s]+$/;
+let Regex1 = /^[a-zA-Z-\s]+$/;
+let Regex2 = /^[0-9a-zA-Z-\s]+$/;
 
 var products = JSON.parse(localStorage.getItem('products'));
 if (products == null) {
@@ -64,24 +65,31 @@ class Contact {
 // Validation du formulaire de commande.
 function formValidation(e) {
     e.preventDefault();
-    if (MyRegex.test(firstname.value) == false) {
-        document.getElementById("firstnameError").innerHTML = "Veuillez respecter le format requis.";
+    if (Regex1.test(firstname.value) == false) {
+        document.getElementById("firstnameError").innerHTML = "Veuillez respecter le format requis (lettres uniquement, pas de caractère spécial).";
         return;
     } else {
         document.getElementById("firstnameError").innerHTML = " ";
     };
-    if (MyRegex.test(lastname.value) == false) {
-        document.getElementById("lastnameError").innerHTML = "Veuillez respecter le format requis.";
+    if (Regex1.test(lastname.value) == false) {
+        document.getElementById("lastnameError").innerHTML = "Veuillez respecter le format requis (lettres uniquement, pas de caractère spécial).";
         return;
     } else {
         document.getElementById("lastnameError").innerHTML = " ";
     };
-    if (MyRegex.test(city.value) == false) {
-        document.getElementById("cityError").innerHTML = "Veuillez respecter le format requis.";
+    if (Regex2.test(address.value) == false) {
+        document.getElementById("addressError").innerHTML = "Veuillez respecter le format requis (caractères alphanumériques uniquement).";
+        return;
+    } else {
+        document.getElementById("addressError").innerHTML = " ";
+    };
+    if (Regex1.test(city.value) == false) {
+        document.getElementById("cityError").innerHTML = "Veuillez respecter le format requis (lettres uniquement, pas de caractère spécial).";
         return;
     } else {
         document.getElementById("cityError").innerHTML = " ";
     };
+
 
     // Création de l'objet "contact" avec les données du formulaire validées.
     let contact = new Contact(firstname.value, lastname.value, address.value, city.value, emailAddress.value);
