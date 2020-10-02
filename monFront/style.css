@@ -141,7 +141,7 @@ footer {
 
 /* STYLE POUR PETITS ECRANS */
 
-@media (max-width: 620px) {
+@media (max-width: 649px) {
     h1.header {
         font-size: 22px;
     }
